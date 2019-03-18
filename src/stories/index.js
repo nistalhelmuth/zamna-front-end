@@ -10,6 +10,8 @@ import { Welcome } from '@storybook/react/demo';
 
 import Button from '../components/Button';
 
+import Color from '../../common/color.js';
+
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
@@ -32,6 +34,7 @@ storiesOf('Button', module)
   )
   .add('Color', () => 
     <div style={{"display": "flex", "flex-direction": "row"}} >
-      <Button color="red" Icon={FaBeer} onClick={action('clicked')}></Button>
-    </div>  
+      <Button color="red" secundaryColor={null} Icon={FaBeer} onClick={action('clicked')}></Button>
+      <Button color="red" secundaryColor="white" Icon={FaBeer} onClick={action('clicked')}></Button>
+    </div>
   )

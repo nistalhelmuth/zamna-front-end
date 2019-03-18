@@ -1,9 +1,12 @@
 import React from 'react';
+import Color from '../../../common/color.js';
 
 import './button.css';
 
 const Button = ({
-  color='white',
+  color=Color.mainColor,
+  secundaryColor=Color.secundaryColor,
+  contentColor='light', // light || dark
   zValue = 'float' , //'flat' || 'float' || 'top'
   children,
   Icon,
@@ -11,7 +14,6 @@ const Button = ({
   iconRight=false,
   iconTop=false,
   iconBottom=false,
-  gradient,
   onClick,
 }) => (
   <button className={`
@@ -23,8 +25,12 @@ const Button = ({
     ${iconRight ? 'iconRight' : ''}
     ${iconTop ? 'iconTop' : ''}
     ${iconBottom ? 'iconBottom' : ''}
+    ${contentColor}
   `} 
-  style={{"background-color": color}}
+  style={{
+    "background-color": color ? color : "none",
+    "background-image": color && secundaryColor ? `linear-gradient(to bottom right, ${secundaryColor}, ${color})` : "none",
+  }}
   onClick={()=> console.log(styles)} >
     { Icon && <Icon className="icon" /> }
     {children}
