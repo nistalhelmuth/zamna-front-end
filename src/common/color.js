@@ -1,4 +1,4 @@
-export const mainColor = "#BD8ABD";
+export const mainColor = "#8F2B8F";
 export const secundaryColor = "#CBAEEE";
 export const whiteColor = "#FBFBFF";
 export const greyColor = "#7A83A8";

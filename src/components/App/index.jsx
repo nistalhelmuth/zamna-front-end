@@ -3,9 +3,10 @@ import {
   BrowserRouter,
   Route,
 } from 'react-router-dom';
-
+import routes from '../../common/routes';
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
-/* import * as routes from '../../constants/routes'; */
+
+import Button from '../Button';
 
 /* const userIsAuthenticated = connectedRouterRedirect({
   redirectPath: routes.SIGN_IN,
@@ -30,5 +31,4 @@ const App = () =>
       </div>
     </div>
   </BrowserRouter>
-
 export default App;

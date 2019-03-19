@@ -1,5 +1,5 @@
 import React from 'react';
-import Color from '../../../common/color.js';
+import Color from '../../common/color.js';
 
 import './button.css';
 

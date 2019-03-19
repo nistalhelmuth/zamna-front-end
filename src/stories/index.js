@@ -10,21 +10,21 @@ import { Welcome } from '@storybook/react/demo';
 
 import Button from '../components/Button';
 
-import Color from '../../common/color.js';
+import Color from '../common/color.js';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('Button', module)
   .addDecorator(withInfo)
   .add('Z-Index', () => 
-    <div style={{"display": "flex", "flex-direction": "row"}} >
+    <div style={{"font-family": "'Poppins', sans-serif", "display": "flex", "flex-direction": "row"}} >
       <Button zValue='top' onClick={action('clicked')}>Top</Button>
       <Button zValue='float' onClick={action('clicked')}>Float</Button>
       <Button zValue='flat' onClick={action('clicked')}>Flat</Button>
     </div>
   )
   .add('Icon', () =>
-    <div style={{"display": "flex", "flex-direction": "row"}} >
+    <div style={{"font-family": "'Poppins'", "display": "flex", "flex-direction": "row"}} >
       <Button Icon={FaBeer} onClick={action('clicked')}></Button>
       <Button Icon={FaBeer} iconLeft onClick={action('clicked')}> Cerveza </Button>
       <Button Icon={FaBeer} iconRight onClick={action('clicked')}> Cerveza </Button>
@@ -33,7 +33,7 @@ storiesOf('Button', module)
     </div>  
   )
   .add('Color', () => 
-    <div style={{"display": "flex", "flex-direction": "row"}} >
+    <div style={{"font-family": "'Poppins', sans-serif", "display": "flex", "flex-direction": "row"}} >
       <Button color="red" secundaryColor={null} Icon={FaBeer} onClick={action('clicked')}></Button>
       <Button color="red" secundaryColor="white" Icon={FaBeer} onClick={action('clicked')}></Button>
     </div>
