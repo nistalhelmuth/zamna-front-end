@@ -12,6 +12,7 @@ import Button from '../Button';
 import H1 from '../Text/H1';
 import Title from '../Text/Title';
 import Subtitle from '../Text/Subtitle';
+import Bookcover from '../Bookcover';
 
 /* const userIsAuthenticated = connectedRouterRedirect({
   redirectPath: routes.SIGN_IN,
@@ -29,6 +30,7 @@ const App = () =>
       <H1> Hello there! </H1>
       <Title> Little Black Book </Title>
       <Subtitle> Otegha Uwagba </Subtitle>
+      <Bookcover imageUrl='https://images.gr-assets.com/books/1459349344l/23437156.jpg' />
       {/* <NavBar></NavBar> */}
       <div className="content">
         {/* <Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />

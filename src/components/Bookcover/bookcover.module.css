@@ -1,0 +1,6 @@
+.bookcover {
+  width: 7.5rem;
+  height: 11rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.5);
+}
