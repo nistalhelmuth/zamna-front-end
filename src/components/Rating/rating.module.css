@@ -1,0 +1,22 @@
+.ratingContainer {
+  display: flex;
+  height: 1rem;
+  align-items: center;
+  width: auto;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.1rem;
+  margin-right: 0.5rem;
+}
+
+.ratingLabel {
+  display: flex;
+  font-size: 0.75rem;
+  color: grey;
+  position: relative;
+  top: -0.1rem;
+}
