@@ -9,6 +9,7 @@ import { FaBeer } from 'react-icons/fa';
 import { Welcome } from '@storybook/react/demo';
 
 import Button from '../components/Button';
+import H1 from '../components/Text/H1';
 
 import Color from '../common/color.js';
 
@@ -36,5 +37,14 @@ storiesOf('Button', module)
     <div style={{"font-family": "'Poppins', sans-serif", "display": "flex", "flex-direction": "row"}} >
       <Button color="red" secundaryColor={null} Icon={FaBeer} onClick={action('clicked')}></Button>
       <Button color="red" secundaryColor="white" Icon={FaBeer} onClick={action('clicked')}></Button>
+    </div>
+  )
+
+
+storiesOf('Text', module)
+  .addDecorator(withInfo)
+  .add('H1', () => 
+    <div style={{"font-family": "'Poppins', sans-serif", "display": "flex", "flex-direction": "row"}} >
+      <H1> Log in </H1>
     </div>
   )

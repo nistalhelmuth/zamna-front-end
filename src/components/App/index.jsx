@@ -6,7 +6,12 @@ import {
 import routes from '../../common/routes';
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
 
+import styles from './app.module.css';
+import { FaBeer } from 'react-icons/fa';
 import Button from '../Button';
+import H1 from '../Text/H1';
+import Title from '../Text/Title';
+import Subtitle from '../Text/Subtitle';
 
 /* const userIsAuthenticated = connectedRouterRedirect({
   redirectPath: routes.SIGN_IN,
@@ -20,7 +25,10 @@ import Button from '../Button';
 
 const App = () =>
   <BrowserRouter>
-    <div className="app">
+    <div className={styles.app}>
+      <H1> Hello there! </H1>
+      <Title> Little Black Book </Title>
+      <Subtitle> Otegha Uwagba </Subtitle>
       {/* <NavBar></NavBar> */}
       <div className="content">
         {/* <Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />

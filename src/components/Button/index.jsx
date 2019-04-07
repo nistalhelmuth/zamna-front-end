@@ -1,7 +1,7 @@
 import React from 'react';
 import Color from '../../common/color.js';
 
-import './button.css';
+import styles from './button.module.css';
 
 const Button = ({
   color=Color.mainColor,
@@ -17,15 +17,15 @@ const Button = ({
   onClick,
 }) => (
   <button className={`
-    button
-    ${zValue}
-    ${Icon ? 'hasIcon' : ''}
-    ${children ? 'children' : ''}
-    ${iconLeft ? 'iconLeft' : ''}
-    ${iconRight ? 'iconRight' : ''}
-    ${iconTop ? 'iconTop' : ''}
-    ${iconBottom ? 'iconBottom' : ''}
-    ${contentColor}
+    ${styles.button}
+    ${styles[zValue]}
+    ${Icon ? styles.hasIcon : ''}
+    ${children ? styles.children : ''}
+    ${iconLeft ? styles.iconLeft : ''}
+    ${iconRight ? styles.iconRight : ''}
+    ${iconTop ? styles.iconTop : ''}
+    ${iconBottom ? styles.iconBottom : ''}
+    ${styles[contentColor]}
   `} 
   style={{
     "background-color": color ? color : "none",
