@@ -1,0 +1,23 @@
+.Container {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.LeftContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RightContainer {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.Description {
+  margin: 0.3rem 0 1rem 0;
+}

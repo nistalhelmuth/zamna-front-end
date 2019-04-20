@@ -14,6 +14,7 @@ import Title from '../Text/Title';
 import Subtitle from '../Text/Subtitle';
 import Bookcover from '../Bookcover';
 import Rating from '../Rating';
+import BookCard from '../BookCard';
 
 /* const userIsAuthenticated = connectedRouterRedirect({
   redirectPath: routes.SIGN_IN,
@@ -29,10 +30,17 @@ const App = () =>
   <BrowserRouter>
     <div className={styles.app}>
       <H1> Hello there! </H1>
-      <Title> Little Black Book </Title>
+      <BookCard 
+        title="Little Black Book"
+        author="Otegha Uwagba"
+        description="Hello there! General Kenobi, you are a bold one ..."
+        imageUrl="https://images.gr-assets.com/books/1459349344l/23437156.jpg"
+        rating={5}
+      />
+      {/* <Title> Little Black Book </Title>
       <Subtitle> Otegha Uwagba </Subtitle>
       <Bookcover imageUrl='https://images.gr-assets.com/books/1459349344l/23437156.jpg' />
-      <Rating stars={5} />
+      <Rating stars={5} /> */}
       {/* <NavBar></NavBar> */}
       <div className="content">
         {/* <Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
