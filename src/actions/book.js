@@ -5,7 +5,7 @@ export const fetchBook = () => ({
   payload: {}
 });
 
-export const fetchBookConfirm = () => ({
+export const fetchBookSucced = () => ({
   type: types.BOOK_FETCHED_CONFIRMED,
   payload: {}
 });
