@@ -1,9 +1,16 @@
-import { takeLatest } from 'redux-saga/effects';
+import { fork, all } from 'redux-saga/effects';
 
-/* import * as types from '../types'; */
+import UserSaga from './user';
+import BookSaga from './book';
+import PlaylistSaga from './playlist';
 
-function* mySaga() {
-    /* yield takeLatest(types.USER_LOG_IN_REQUESTED, fetchLogIn);      // log in */
+
+function* mainSaga() {
+  yield all([
+    fork(UserSaga),
+    fork(BookSaga),
+    fork(PlaylistSaga),
+  ]);
 }
 
-export default mySaga;
+export default mainSaga;
