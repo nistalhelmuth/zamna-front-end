@@ -19,7 +19,7 @@ function* allBooksFetcher(action) {
       getAllBooks,
       someparam,
     );
-    yield put(actions.allBooksFetcher(response.books))
+    yield put(actions.fetchAllBooksConfirm(response.books))
   } catch(e){
     console.log('Saga all books fetcher failed');
   }
@@ -36,7 +36,7 @@ function* BookFetcher(action) {
       getBook,
       someparam,
     );
-    yield put(actions.allBooksFetcher(response.book))
+    yield put(actions.fetchBookConfirm(response.book))
   } catch(e){
     console.log('Saga book fetcher failed');
   }

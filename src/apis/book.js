@@ -1,6 +1,6 @@
 export const getAllBooks = (
   someparam,
-) => fetch('http://127.0.0.1:8000/api/v1/books/', {
+) => fetch(`http://127.0.0.1:8000/api/v1/books/by_something/?something=${someparam}`, {
   method: 'GET',
 }).then(resultado => resultado.json())
   .catch(error => console.log(error));

@@ -3,7 +3,7 @@ import * as types from '../types/book';
 export const fetchBook = (
   someparam
 ) => ({
-  type: types.Book_FETCHED,
+  type: types.BOOK_FETCHED,
   payload: {
     someparam,
   }
@@ -26,7 +26,7 @@ export const fetchBookFail = () => ({
 export const fetchAllBooks = (
   someparam
 ) => ({
-  type: types.ALL_BOOK_FETCHED,
+  type: types.ALL_BOOKS_FETCHED,
   payload: {
     someparam,
   }
@@ -35,13 +35,13 @@ export const fetchAllBooks = (
 export const fetchAllBooksConfirm = (
   books,
 ) => ({
-  type: types.ALL_BOOK_FETCHED_CONFIRMED,
+  type: types.ALL_BOOKS_FETCHED_CONFIRMED,
   payload: {
     books,
   }
 });
 
 export const fetchAllBooksFail = () => ({
-  type: types.ALL_BOOK_FETCHED_FAILED,
+  type: types.ALL_BOOKS_FETCHED_FAILED,
   payload: {}
 });

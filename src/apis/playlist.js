@@ -1,0 +1,85 @@
+
+export const postPlaylist = (
+  name,
+  link,
+  user,
+  description,
+  book,
+) => new Promise((resolve, reject) => {
+  fetch('http://127.0.0.1:8000/api/v1/playlist/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      link,
+      user,
+      description,
+      book,
+    }),
+  }).then((resultado) => {
+    if (resultado.ok) {
+      resolve(resultado.json());
+    } else {
+      reject(resultado.statusText);
+    }
+  })
+    .catch((error) => {
+      reject(error);
+    });
+});
+
+export const getAllPlaylist = (
+  somparam
+) => fetch(`http://127.0.0.1:8000/api/v1/playlist/from_book/?book=${somparam}`, {
+  method: 'GET',
+}).then(resultado => resultado.json())
+  .catch(error => console.log(error));
+
+export const postRateInPlaylist = (
+  rating,
+  playlist,
+) => new Promise((resolve, reject) => {
+  fetch('http://127.0.0.1:8000/api/v1/rate_per_playlist/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      rating,
+      playlist,
+    }),
+  }).then((resultado) => {
+    if (resultado.ok) {
+      resolve(resultado.json());
+    } else {
+      reject(resultado.statusText);
+    }
+  }).catch(error => reject(error));
+});
+
+export const postCommentInPlaylist = (
+  comment,
+  playlist,
+) => new Promise((resolve, reject) => {
+  fetch('http://127.0.0.1:8000/api/v1/comment_playlist/', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      comment,
+      playlist,
+    }),
+  }).then((resultado) => {
+    if (resultado.ok) {
+      resolve(resultado.json());
+    } else {
+      reject(resultado.statusText);
+    }
+  }).catch(error => reject(error));
+});
