@@ -37,6 +37,14 @@ const App = () =>
         imageUrl="https://images.gr-assets.com/books/1459349344l/23437156.jpg"
         rating={5}
       />
+      <hr/>
+      <BookCard 
+        title="Little Black Book"
+        author="Otegha Uwagba"
+        description="Hello there! General Kenobi, you are a bold one ..."
+        imageUrl="https://images.gr-assets.com/books/1459349344l/23437156.jpg"
+        rating={5}
+      />
       {/* <Title> Little Black Book </Title>
       <Subtitle> Otegha Uwagba </Subtitle>
       <Bookcover imageUrl='https://images.gr-assets.com/books/1459349344l/23437156.jpg' />
