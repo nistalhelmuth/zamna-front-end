@@ -16,6 +16,9 @@ import Bookcover from '../Bookcover';
 import Rating from '../Rating';
 import BookCard from '../BookCard';
 
+import coneverXML from 'xml-js';
+import proxify from 'proxify-url';
+
 /* const userIsAuthenticated = connectedRouterRedirect({
   redirectPath: routes.SIGN_IN,
   authenticatedSelector: state => {
@@ -26,10 +29,23 @@ import BookCard from '../BookCard';
   wrapperDisplayName: 'UserIsAuthenticated'
 }) */
 
-const App = () =>
+
+const App = () => {
+  let proxyUrl = proxify("https://www.goodreads.com/search/index.xml?key=FtV2JkeEaiobnja5s890Q&q=Game", { inputFormat: 'xml' });
+  fetch(proxyUrl).then(d => console.log(d))
+
+return (
   <BrowserRouter>
     <div className={styles.app}>
       <H1> Hello there! </H1>
+      <BookCard 
+        title="Little Black Book"
+        author="Otegha Uwagba"
+        description="Hello there! General Kenobi, you are a bold one ..."
+        imageUrl="https://images.gr-assets.com/books/1459349344l/23437156.jpg"
+        rating={5}
+      />
+      <hr styles={{width: '100%'}} />
       <BookCard 
         title="Little Black Book"
         author="Otegha Uwagba"
@@ -51,4 +67,5 @@ const App = () =>
       </div>
     </div>
   </BrowserRouter>
+)}
 export default App;

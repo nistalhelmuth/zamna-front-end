@@ -1,13 +1,17 @@
 import * as types from '../types/book';
 
 export const fetchBook = () => ({
-  type: types.Book_FETCHED,
-  payload: {}
+  type: types.BOOK_FETCHED,
+  payload: {
+    id,
+  }
 });
 
 export const fetchBookSucced = () => ({
-  type: types.BOOK_FETCHED_CONFIRMED,
-  payload: {}
+  type: types.BOOK_FETCHED_SUCCEEDED,
+  payload: {
+    
+  }
 });
 
 export const fetchBookFail = () => ({
