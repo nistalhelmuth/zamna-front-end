@@ -8,20 +8,34 @@ import * as types from '../types/book'
 import * as actions from '../actions/book'
 import { getAllBooks, getBook } from '../apis/book';
 
+
 function* allBooksFetcher(action) {
   const {
     payload: {
-      someparam,
+      title,
     },
   } = action;
+
   try {
-    const response = yield call(
+    const raw_books = yield call(
       getAllBooks,
-      someparam,
+      title,
     );
-    yield put(actions.fetchAllBooksConfirm(response.books))
-  } catch(e){
-    console.log('Saga all books fetcher failed');
+  
+    const books_list = raw_books.map(
+      book => ({
+        id: parseInt(book.best_book.id._text),
+        img: book.best_book.image_url._text,
+        title: book.best_book.title._text,
+        author: book.best_book.author.name._text,
+        average_rating: parseFloat(book.average_rating._text),
+      })
+    );
+
+    yield put(actions.fetchAllBooksSuccess(books_list));
+  }
+  catch (e) {
+    console.log("Error")
   }
 }
 
@@ -36,8 +50,8 @@ function* BookFetcher(action) {
       getBook,
       someparam,
     );
-    yield put(actions.fetchBookConfirm(response.book))
-  } catch(e){
+    yield put(actions.fetchBookSuccess(response.book))
+  } catch (e) {
     console.log('Saga book fetcher failed');
   }
 }

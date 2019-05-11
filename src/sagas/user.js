@@ -25,7 +25,7 @@ function* userCreator(action) {
           email,
           password,
       );
-      yield put(actions.registerUserConfirm(response.user));
+      yield put(actions.registerUserSuccess(response.user));
     } catch(e) {
       console.log('Saga user creator failed');
     }
@@ -44,7 +44,7 @@ function* userLogger(action){
         email,
         password,
     );
-    yield put(actions.registerUserConfirm(response.user));
+    yield put(actions.registerUserSuccess(response.user));
   } catch(e) {
     console.log('Saga user logger failed');
   }
@@ -53,7 +53,7 @@ function* userLogger(action){
 function* allUsersFetcher() {
   try {
     const response = yield call(getAllUsers);
-    yield put(actions.fetchAllUsersConfirm(response.users))
+    yield put(actions.fetchAllUsersSuccess(response.users))
   } catch(e) {
     console.log('Saga get all users failed');
   }
@@ -70,7 +70,7 @@ function* userFetcher(action) {
       getUser,
       id,
     );
-    yield put(actions.fetchUserConfirm(response.user))
+    yield put(actions.fetchUserSuccess(response.user))
   } catch(e) {
     console.log('Saga get user faied')
   }

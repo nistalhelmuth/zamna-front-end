@@ -10,7 +10,6 @@ import styles from './bookcard.module.css';
 const BookCard = ({
   title,
   author,
-  description,
   imageUrl,
   rating,
   ...props
@@ -22,7 +21,6 @@ const BookCard = ({
     <div className={styles.RightContainer}>
       <Title> {title} </Title>
       <Subtitle> {author} </Subtitle>
-      <p className={styles.Description}> {description} </p>
       <Rating stars={rating} />
     </div>
   </div>

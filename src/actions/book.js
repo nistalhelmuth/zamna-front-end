@@ -7,7 +7,7 @@ export const fetchBook = (id) => ({
   }
 });
 
-export const fetchBookSucced = (
+export const fetchBookSuccess = (
   id,
   title,
   author,
@@ -44,10 +44,10 @@ export const fetchAllBooks = (
   }
 });
 
-export const fetchAllBooksConfirm = (
+export const fetchAllBooksSuccess = (
   books,
 ) => ({
-  type: types.ALL_BOOKS_FETCHED_CONFIRMED,
+  type: types.ALL_BOOKS_FETCHED_SUCCEEDED,
   payload: {
     books,
   }

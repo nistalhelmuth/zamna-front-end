@@ -54,7 +54,7 @@ export const fetchPlaylistsSuccess = (
 export const fetchPlaylistsFail = (
   id,
 ) => ({
-  type: types.ALL_PLAYLISTS_FETCHED_FAILED,
+  type: types.ALL_PLAYLIST_FETCHED_FAILED,
   payload: {
     id,
   }
@@ -105,7 +105,7 @@ export const commentPlaylist = (
 });
 
 export const commentPlaylistSuccess = () => ({
-  type: types.PLAYLIST_COMMENTED_CONFIRMED,
+  type: types.PLAYLIST_COMMENT_SUCCEEDED,
   payload: {}
 });
 export const commentPlaylistFail = (

@@ -1,2 +1,10 @@
 export const HOME = '/home';
-export const PROFILE = '/profile'
+export const BOOK = '/book';
+export const PROFILE = '/profile';
+
+
+export default {
+  HOME,
+  BOOK,
+  PROFILE,
+}

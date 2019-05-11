@@ -6,10 +6,11 @@ import Color from '../../common/color.js';
 import styles from './rating.module.css';
 
 class Rating extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    console.log(props)
     this.state = {
-      rating: 0,
+      rating: props.stars,
     }
   }
 

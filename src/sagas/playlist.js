@@ -27,7 +27,7 @@ function* playlistCreator(action) {
           description,
           book,
       );
-      yield put(actions.createPlaylistsConfirm(response.playlist));
+      yield put(actions.createPlaylistsSuccess(response.playlist));
     } catch(e) {
       console.log('Saga playlist creator failed');
     }
@@ -44,7 +44,7 @@ function* playlistFetcher(action) {
         getAllPlaylist,
         someparam,
     );
-    yield put(actions.createPlaylistsConfirm(response.playlists));
+    yield put(actions.createPlaylistsSuccess(response.playlists));
   } catch(e) {
     console.log('Saga playlist fetcher failed');
   }
@@ -63,7 +63,7 @@ function* playlistRater(action) {
       rating,
       playlist,
     );
-    yield put(actions.ratePlaylistConfirm());
+    yield put(actions.ratePlaylistSuccess());
   } catch(e) {
     console.log('Saga playlist rater failed');
   }
@@ -82,7 +82,7 @@ function* playlistCommenter(action) {
       comment,
       playlist,
     );
-    yield put(actions.commentPlaylistConfirm());
+    yield put(actions.commentPlaylistSuccess());
   } catch(e) {
     console.log('Saga playlist commenter failed');
   }
@@ -94,7 +94,7 @@ function* UserSaga() {
     playlistCreator,
   );
   yield takeLatest(
-    types.ALL_PLAYLISTS_FETCHED,
+    types.ALL_PLAYLIST_FETCHED,
     playlistFetcher,
   )
   yield takeLatest(

@@ -6,15 +6,9 @@ import {
 import routes from '../../common/routes';
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
 
+import HomeApp from '../Views/home';
+
 import styles from './app.module.css';
-import { FaBeer } from 'react-icons/fa';
-import Button from '../Button';
-import H1 from '../Text/H1';
-import Title from '../Text/Title';
-import Subtitle from '../Text/Subtitle';
-import Bookcover from '../Bookcover';
-import Rating from '../Rating';
-import BookCard from '../BookCard';
 
 import coneverXML from 'xml-js';
 import proxify from 'proxify-url';
@@ -31,34 +25,13 @@ import proxify from 'proxify-url';
 
 
 const App = () => {
-  let proxyUrl = proxify("https://www.goodreads.com/search/index.xml?key=FtV2JkeEaiobnja5s890Q&q=Game", { inputFormat: 'xml' });
-  fetch(proxyUrl).then(d => console.log(d))
 
 return (
   <BrowserRouter>
     <div className={styles.app}>
-      <H1> Hello there! </H1>
-      <BookCard 
-        title="Little Black Book"
-        author="Otegha Uwagba"
-        description="Hello there! General Kenobi, you are a bold one ..."
-        imageUrl="https://images.gr-assets.com/books/1459349344l/23437156.jpg"
-        rating={5}
-      />
-      <hr styles={{width: '100%'}} />
-      <BookCard 
-        title="Little Black Book"
-        author="Otegha Uwagba"
-        description="Hello there! General Kenobi, you are a bold one ..."
-        imageUrl="https://images.gr-assets.com/books/1459349344l/23437156.jpg"
-        rating={5}
-      />
-      {/* <Title> Little Black Book </Title>
-      <Subtitle> Otegha Uwagba </Subtitle>
-      <Bookcover imageUrl='https://images.gr-assets.com/books/1459349344l/23437156.jpg' />
-      <Rating stars={5} /> */}
       {/* <NavBar></NavBar> */}
       <div className="content">
+        <Route exact path={routes.HOME} component={HomeApp} />
         {/* <Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.HOME} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.NOTE} component={NoteApp} />
