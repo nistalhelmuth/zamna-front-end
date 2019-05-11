@@ -15,12 +15,14 @@ export const registerUser = (
   }
 });
 
-export const registerUserConfirm = (
-  user,
+export const registerUserSuccess = (
+  id,
+  username,
 ) => ({
-  type: types.USER_REGISTERED_CONFIRMED,
+  type: types.USER_REGISTERED_SUCCEEDED,
   payload: {
-    user,
+    id,
+    username,
   }
 });
 
@@ -40,12 +42,14 @@ export const logUser = (
   }
 });
 
-export const logUserConfirm = (
-  user,
+export const logUserSuccess = (
+  id,
+  username,
 ) => ({
-  type: types.USER_LOGGED_CONFIRMED,
+  type: types.USER_LOGGED_SUCCEEDED,
   payload: {
-    user,
+    id,
+    username,
   }
 });
 
@@ -59,10 +63,10 @@ export const fetchAllUsers = () => ({
   payload: {}
 });
 
-export const fetchAllUsersConfirm = (
+export const fetchAllUsersSuccess = (
   users,
 ) => ({
-  type: types.ALL_USERS_FETCHED_CONFIRMED,
+  type: types.ALL_USERS_FETCHED_SUCCEEDED,
   payload: {
     users,
   }
@@ -82,12 +86,14 @@ export const fetchUser = (
   }
 });
 
-export const fetchUserConfirm = (
-  user,
+export const fetchUserSuccess = (
+  id,
+  username,
 ) => ({
-  type: types.USER_FETCHED_CONFIRMED,
+  type: types.USER_FETCHED_SUCCEEDED,
   payload: {
-    user,
+    id,
+    username,
   }
 });
 

@@ -2,28 +2,28 @@ import * as types from '../types/playlist';
 
 // create playlist
 export const createPlaylist = (
+  id,
   name,
   link,
   user,
   description,
-  book,
 ) => ({
   type: types.PLAYLIST_CREATED,
   payload: {
+    id,
     name,
     link,
     user,
     description,
-    book,
   }
 });
 
-export const createPlaylistsConfirm = (
-  playlist,
+export const createPlaylistsSuccess = (
+  id,
 ) => ({
-  type: types.PLAYLIST_CREATED_CONFIRMED,
+  type: types.PLAYLIST_CREATED_SUCCEEDED,
   payload: {
-    playlist,
+    id,
   }
 });
 
@@ -34,67 +34,85 @@ export const createPlaylistsFail = () => ({
 
 // fetch playlists
 export const fetchPlaylists = (
-  someparam,
+  book_id,
 ) => ({
-  type: types.ALL_PLAYLISTS_FETCHED,
+  type: types.ALL_PLAYLIST_FETCHED,
   payload: {
-    someparam,
+    book_id,
   }
 });
 
-export const fetchPlaylistsConfirm = (
+export const fetchPlaylistsSuccess = (
   playlists,
 ) => ({
-  type: types.ALL_PLAYLISTS_FETCHED_CONFIRMED,
+  type: types.ALL_PLAYLIST_FETCHED_SUCCEEDED,
   payload: {
     playlists,
   }
 });
 
-export const fetchPlaylistsFail = () => ({
+export const fetchPlaylistsFail = (
+  id,
+) => ({
   type: types.ALL_PLAYLISTS_FETCHED_FAILED,
-  payload: {}
+  payload: {
+    id,
+  }
 });
 
 // rate playlist
 export const ratePlaylist = (
   rating,
   playlist,
+  user_id,
 ) => ({
   type: types.PLAYLIST_RATED,
   payload: {
     rating,
     playlist,
+    user_id,
   }
 });
 
-export const ratePlaylistConfirm = () => ({
-  type: types.PLAYLIST_RATED_CONFIRMED,
+export const ratePlaylistSuccess = () => ({
+  type: types.PLAYLIST_RATED_SUCCEEDED,
   payload: {}
 });
 
-export const ratePlaylistFail = () => ({
-  type: types.PLAYLIST_RATED_CONFIRMED,
-  payload: {}
+export const ratePlaylistFail = (
+  id,
+) => ({
+  type: types.PLAYLIST_RATED_FAILED,
+  payload: {
+    id,
+  }
 });
 
 // Comment playlist
 export const commentPlaylist = (
+  book_id,
+  playlist_id,
+  user_id,
   comment,
-  playlist,
 ) => ({
   type: types.PLAYLIST_COMMENTED,
   payload: {
-    comment,
-    playlist,
+    book_id,
+  playlist_id,
+  user_id,
+  comment,
   }
 });
 
-export const commentPlaylistConfirm = () => ({
+export const commentPlaylistSuccess = () => ({
   type: types.PLAYLIST_COMMENTED_CONFIRMED,
   payload: {}
 });
-export const commentPlaylistFail = () => ({
-  type: types.PLAYLIST_COMMENTED_CONFIRMED,
-  payload: {}
+export const commentPlaylistFail = (
+  id,
+) => ({
+  type: types.PLAYLIST_COMMENT_SUCCEEDED,
+  payload: {
+    id,
+  }
 });
