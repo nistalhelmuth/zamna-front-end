@@ -10,12 +10,12 @@ import { postUser, logUser, getAllUsers, getUser } from '../apis/user';
 
 function* userCreator(action) {
     const {
-        payload: {
-            id,
-            username,
-            email,
-            password,
-        }
+      payload: {
+          id,
+          username,
+          email,
+          password,
+      }
     } = action;
     try {
       const response = yield call(

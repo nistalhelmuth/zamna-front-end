@@ -6,7 +6,7 @@ export const createPlaylist = () => ({
   payload: {}
 });
 
-export const createPlaylistsSucced = () => ({
+export const createPlaylistsConfirm = () => ({
   type: types.PLAYLIST_CREATED_CONFIRMED,
   payload: {}
 });
@@ -22,7 +22,7 @@ export const fetchPlaylists = () => ({
   payload: {}
 });
 
-export const fetchPlaylistsSucceed = () => ({
+export const fetchPlaylistsConfirm = () => ({
   type: types.PLAYLIST_FETCHED_CONFIRMED,
   payload: {}
 });
@@ -38,7 +38,7 @@ export const ratePlaylist = () => ({
   payload: {}
 });
 
-export const ratePlaylistSucceed = () => ({
+export const ratePlaylistConfirm = () => ({
   type: types.PLAYLIST_RATE_CONFIRMED,
   payload: {}
 });
@@ -54,7 +54,7 @@ export const commentPlaylist = () => ({
   payload: {}
 });
 
-export const commentPlaylistSucceed = () => ({
+export const commentPlaylistConfirm = () => ({
   type: types.PLAYLIST_COMMENTED_CONFIRMED,
   payload: {}
 });
