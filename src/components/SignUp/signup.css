@@ -1,0 +1,73 @@
+@fontface {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Montserrat');
+}
+
+.ContainerS{
+    width: 100%;
+    height: 16rem;
+    position: relative;
+    top: 6rem;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    vertical-align: 50%;
+    background-color: #7A83A8;
+  
+}
+
+.ImageContainer{
+    width: 55rem;
+    height: 14rem;
+    position: relative;
+    left: 20rem;
+
+}
+
+.SignUp{
+    width: 32rem;
+    height: 14rem;
+    position: relative;
+    left: 20rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.UserInputS{
+    width: 20rem;
+    height: 1.5rem;
+    position: relative;
+    left: 1rem;
+    margin: 0rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.PassInputS{
+    width: 20rem;
+    height: 1.5rem;
+    position: relative;
+    left: 1rem;
+    margin: 0rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.EmailInputS{
+    width: 20rem;
+    height: 1.5rem;
+    position: relative;
+    left: 1rem;
+    margin: 0rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.TextS{
+    font-size: 1.5rem;
+    position: relative;
+    left: 1rem;
+    color: #FBFBFF;
+}
