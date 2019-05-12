@@ -10,6 +10,8 @@
   align-items: center;
   transition: 0.15s all;
   -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .button.hasIcon{
@@ -68,8 +70,8 @@
   min-width: 5rem;
 }
 
-.hasIcon.children.iconLeft .icon {
-  margin-right: 0.5rem;
+.iconLeft .svg {
+  margin-right: 2rem;
 }
 
 .hasIcon.children.iconRight .icon {

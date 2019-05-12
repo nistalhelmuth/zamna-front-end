@@ -1,6 +1,17 @@
 import { combineReducers } from 'redux';
 import * as types from '../types/book';
 
+const currentBook = (state = {}, action) => {
+  switch(action.type) {
+    case types.BOOK_FETCHED_SUCCEEDED: {
+      return action.payload;
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
 const byId = (state = {}, action) => {
   switch(action.type) {
     case types.ALL_BOOKS_FETCHED_SUCCEEDED: {
@@ -32,6 +43,7 @@ const order = (state = [], action) => {
 }
 
 export default combineReducers({
+  currentBook,
   byId,
   order,
 });

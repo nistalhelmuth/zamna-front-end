@@ -42,15 +42,40 @@ function* allBooksFetcher(action) {
 function* BookFetcher(action) {
   const {
     payload: {
-      someparam,
+      id,
     },
   } = action;
+  const response = yield call(
+    getBook,
+    id,
+  );
+
+  console.log(response.similar_books.book[0]);
+
+  const recomendation = response.similar_books.book.map(
+    book => ({
+      id: parseInt(book.id._text),
+      img: book.image_url._cdata,
+      title: book.title._text,
+      average_rating: parseFloat(book.average_rating._text),
+    })
+  );
+  
+  const book = {
+    id: response.id._text,
+    average_rating: parseFloat(response.average_rating._text),
+    description: response.description._cdata,
+    img: response.image_url._text,
+    num_pages: parseInt(response.num_pages._cdata),
+    publisher: response.publisher._text,
+    title: response.title._text,
+    similar_books: recomendation,
+  };
+
+  console.log(book)
+
+  yield put(actions.fetchBookSuccess(book))
   try {
-    const response = yield call(
-      getBook,
-      someparam,
-    );
-    yield put(actions.fetchBookSuccess(response.book))
   } catch (e) {
     console.log('Saga book fetcher failed');
   }

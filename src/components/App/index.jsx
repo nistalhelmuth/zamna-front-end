@@ -7,6 +7,7 @@ import routes from '../../common/routes';
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
 
 import HomeApp from '../Views/home';
+import BookApp from '../Views/book';
 
 import styles from './app.module.css';
 
@@ -32,6 +33,7 @@ return (
       {/* <NavBar></NavBar> */}
       <div className="content">
         <Route exact path={routes.HOME} component={HomeApp} />
+        <Route path={routes.BOOK} component={BookApp} />
         {/* <Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.HOME} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.NOTE} component={NoteApp} />
