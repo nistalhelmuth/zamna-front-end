@@ -2,6 +2,7 @@ import React from 'react';
 import Color from '../../common/color.js';
 import Subtitle from '../Text/Subtitle';
 import Button from '../Button';
+import zamnaName from '../../images/zamnaName.png'
 
 import './header.css';
 
@@ -13,7 +14,7 @@ const Header = ({
       <div className={"Logo"}> 
         <img 
             className={'LogoImg'}
-            src={'eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDIzIiwicGF0aCI6IlwvZlwvOWFhNWIxZTYtZmQ0Yy00MmMzLWE0ZjAtODM0YzFjYzRlNjEwXC9kY2xrc2cyLTJhOGQzN2UzLTcwZGQtNDZiMy1iNDliLTAyYzIzZGE0ZjIxZC5wbmciLCJ3aWR0aCI6Ijw9MTAyMyJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19'}
+            src={zamnaName}
         />
       </div>
       <div className={'Input'}> 
