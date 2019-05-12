@@ -1,0 +1,48 @@
+.book {
+}
+
+.book .content{
+  display: flex;
+  width: 1200px;
+}
+
+.book .content .leftContainer{
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book .content .leftContainer hr{
+  width: 80%;
+}
+
+
+.book .content .leftContainer .top{
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.book .content .leftContainer .imgCol{
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  align-items: center;
+}
+
+
+.book .content .leftContainer .infoCol{
+  flex: 6;
+  text-align: justify;
+  margin-right: 1rem;
+}
+
+.book .content .leftContainer .infoCol h3{
+  margin-top: 0;
+}
+
+.book .content .rightContainer{
+  flex: 3;
+}
+

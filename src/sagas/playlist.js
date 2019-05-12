@@ -6,7 +6,7 @@ import {
 
 import * as types from '../types/playlist'
 import * as actions from '../actions/playlist'
-import { postPlaylist, getAllPlaylist, postRateInPlaylist, postCommentInPlaylist } from '../apis/playlist';
+import { postPlaylist, getAllPlaylists, postRateInPlaylist, postCommentInPlaylist } from '../apis/playlist';
 
 function* playlistCreator(action) {
     const {
@@ -36,15 +36,16 @@ function* playlistCreator(action) {
 function* playlistFetcher(action) {
   const {
     payload: {
-      someparam,
+      book_id,
     }
   } = action;
   try {
+    
     const response = yield call(
-        getAllPlaylist,
-        someparam,
+        getAllPlaylists,
+        book_id,
     );
-    yield put(actions.createPlaylistsSuccess(response.playlists));
+    yield put(actions.fetchPlaylistsSuccess(response));
   } catch(e) {
     console.log('Saga playlist fetcher failed');
   }
@@ -53,17 +54,21 @@ function* playlistFetcher(action) {
 function* playlistRater(action) {
   const {
     payload: {
-      rating,
+      playlist_index,
       playlist,
+      user_id,
+      vote,
     }
   } = action;
   try {
-    yield call(
+    /*
+    const response = yield call(
       postRateInPlaylist,
-      rating,
-      playlist,
-    );
-    yield put(actions.ratePlaylistSuccess());
+       playlist,
+      user_id,
+      vote,
+    );*/
+    yield put(actions.ratePlaylistSuccess(playlist_index,999));
   } catch(e) {
     console.log('Saga playlist rater failed');
   }

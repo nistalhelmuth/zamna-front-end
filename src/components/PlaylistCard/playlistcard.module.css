@@ -1,0 +1,14 @@
+.playlistCard {
+  margin: 0rem 0rem 1rem 0rem;
+  display: flex;
+}
+
+.playlistCard .votesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.playlistCard .votesContainer h3{
+  margin: 0;
+}

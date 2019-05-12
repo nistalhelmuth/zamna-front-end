@@ -4,8 +4,9 @@ import {
   takeLatest,
 } from 'redux-saga/effects';
 
-import * as types from '../types/book'
-import * as actions from '../actions/book'
+import * as types from '../types/book';
+import * as actions from '../actions/book';
+import * as playlistActions from '../actions/playlist';
 import { getAllBooks, getBook } from '../apis/book';
 
 
@@ -50,7 +51,7 @@ function* BookFetcher(action) {
     id,
   );
 
-  console.log(response.similar_books.book[0]);
+  //console.log(response.similar_books.book[0]);
 
   const recomendation = response.similar_books.book.map(
     book => ({
@@ -63,18 +64,21 @@ function* BookFetcher(action) {
   
   const book = {
     id: response.id._text,
+    title: response.title._text,
+    author: response.authors.author.name._text,
     average_rating: parseFloat(response.average_rating._text),
-    description: response.description._cdata,
     img: response.image_url._text,
+    description: response.description._cdata,
     num_pages: parseInt(response.num_pages._cdata),
     publisher: response.publisher._text,
-    title: response.title._text,
+    publication_year: response.publication_year._text,
     similar_books: recomendation,
+    playlists: [],
   };
 
-  console.log(book)
-
-  yield put(actions.fetchBookSuccess(book))
+  
+  yield put(actions.fetchBookSuccess(book));
+  yield put(playlistActions.fetchPlaylists(book.id));
   try {
   } catch (e) {
     console.log('Saga book fetcher failed');

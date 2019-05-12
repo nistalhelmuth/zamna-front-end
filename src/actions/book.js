@@ -7,24 +7,32 @@ export const fetchBook = (id) => ({
   }
 });
 
-export const fetchBookSuccess = (
+export const fetchBookSuccess = ({
   id,
   title,
   author,
   average_rating,
-  original_publication_year,
   img,
-  small_img,
-) => ({
+  description,
+  num_pages,
+  publisher,
+  publication_year,
+  similar_books,
+  playlists,
+}) => ({
   type: types.BOOK_FETCHED_SUCCEEDED,
   payload: {
     id,
     title,
     author,
     average_rating,
-    original_publication_year,
     img,
-    small_img,
+    description,
+    num_pages,
+    publisher,
+    publication_year,
+    similar_books,
+    playlists,
   }
 });
 

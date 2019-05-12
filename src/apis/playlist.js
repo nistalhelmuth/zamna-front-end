@@ -31,9 +31,9 @@ export const postPlaylist = (
     });
 });
 
-export const getAllPlaylist = (
-  somparam
-) => fetch(`http://127.0.0.1:8000/api/v1/playlist/from_book/?book=${somparam}`, {
+export const getAllPlaylists = (
+  book_id,
+) => fetch(`http://127.0.0.1:8000/api/v1/playlist/book/?book_id=${book_id}`, {
   method: 'GET',
 }).then(resultado => resultado.json())
   .catch(error => console.log(error));

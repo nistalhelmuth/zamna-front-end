@@ -33,14 +33,17 @@ const App = () => {
 return (
   <BrowserRouter>
     <div className={styles.app}>
+      
       <Header/>
       <SignUp/>
       <Footer/>
-      {/* <NavBar></NavBar> */}
+      {/* 
+      <NavBar></NavBar> 
+      */}
       <div className="content">
-        {/*<Route exact path={routes.HOME} component={HomeApp} />
+        {/*<Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
+        <Route exact path={routes.HOME} component={HomeApp} />
         <Route path={routes.BOOK} component={BookApp} />
-        <Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.HOME} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.NOTE} component={NoteApp} />
         <Route exact path={routes.SIGN_IN} component={LoginApp} />

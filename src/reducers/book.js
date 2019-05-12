@@ -1,10 +1,31 @@
 import { combineReducers } from 'redux';
 import * as types from '../types/book';
+import * as playlistTypes from '../types/playlist';
 
 const currentBook = (state = {}, action) => {
   switch(action.type) {
     case types.BOOK_FETCHED_SUCCEEDED: {
       return action.payload;
+    }
+    case playlistTypes.ALL_PLAYLIST_FETCHED_SUCCEEDED: {
+      const new_state = {
+        ...state,
+        playlists: action.payload.playlists
+      }
+      return new_state;
+    } 
+    case playlistTypes.PLAYLIST_RATED_SUCCEEDED: {
+      const {
+        playlist_index,
+        all_votes,
+      } = action.payload
+      const new_playlist = state.playlist;
+      new_playlist[playlist_index].votes = all_votes;
+      const new_state = {
+        ...state,
+        playlist: new_playlist,
+      }
+      return new_state;
     }
     default: {
       return state;
@@ -48,4 +69,5 @@ export default combineReducers({
   order,
 });
 
-export const getBooks = (state) => state.order.map(id => state.byId[id]); 
+export const getBook = state => state.currentBook;
+export const getAllBooks = (state) => state.order.map(id => state.byId[id]); 
