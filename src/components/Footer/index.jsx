@@ -4,6 +4,9 @@ import Color from '../../common/color.js';
 import styles from './footer.css';
 import Title from '../Text/Title'
 import Subtitle from '../Text/Subtitle'
+import facebook from '../../images/facebook.png'
+import twitter from '../../images/twitter.png'
+import youtube from '../../images/yt.png'
 
 const Footer = ({
     userId,
@@ -22,21 +25,17 @@ const Footer = ({
         <Title className={'Text'}> {'Contáctanos'} </Title>
           <img
             className={'Icon'} 
-            src={''}
+            src={facebook}
           />
           <img
             className={'Icon'} 
-            src={''}
+            src={twitter}
           />
           <img
             className={'Icon'} 
-            src={''}
+            src={youtube}
           />
-          <img
-            className={'Icon'} 
-            src={''}
-          />
-      </div>
+      </div>>
     </div>
   );
 
