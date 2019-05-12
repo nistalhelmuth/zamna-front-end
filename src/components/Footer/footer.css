@@ -12,15 +12,11 @@
 .Company{
     width: 15rem;
     height: 10rem;
-    position: relative;
-    left: 25rem;
 }
 
 .Contact{
     width: 20rem;
     height: 10rem;
-    position: relative;
-    left: 26rem;
 }
 
 @fontface {

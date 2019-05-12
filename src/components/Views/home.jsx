@@ -18,7 +18,7 @@ class HomeApp extends Component {
 
   render() {
     return (
-      <div style={{minHeight: '750px',}}>
+      <div>
         <BookList />   
       </div>
     );

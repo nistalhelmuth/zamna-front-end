@@ -35,7 +35,7 @@ const Footer = ({
             className={'Icon'} 
             src={youtube}
           />
-      </div>>
+      </div>
     </div>
   );
 

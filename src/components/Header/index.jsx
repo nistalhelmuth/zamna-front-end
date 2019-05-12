@@ -24,7 +24,7 @@ const Header = ({
       <div className={'User'}>
             <input className={'UserInput'} placeholder={'Usuario'}/>
             <input className={'PassInput'} type={'password'} placeholder={'Contraseña'}/>
-            <Button style={{position: 'relative', left: '5rem', height: '50%', width: '7rem', }}>
+            <Button style={{height: '50%', width: '7rem', }}>
                 <p className={'Text'}> Ingresar </p>
             </Button>
       </div>
