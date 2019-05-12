@@ -1,16 +1,12 @@
 .ContainerF{
     width: 100%;
     height: 12rem;
-    position: absolute;
-    bottom: 0rem;
-    left: 0;
-    position: absolute;
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
     vertical-align: 50%;
     background-color: #2A2644;
-  
 }
 
 .Company{

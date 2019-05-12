@@ -35,12 +35,10 @@ return (
     <div className={styles.app}>
       
       <Header/>
-      <SignUp/>
-      <Footer/>
-      {/* 
-      <NavBar></NavBar> 
-      */}
-      <div className="content">
+      {/* <SignUp/> */}
+      <div className={styles.content}>
+        <Route exact path={routes.HOME} component={HomeApp} />
+        <Route path={routes.BOOK} component={BookApp} />
         {/*<Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
         <Route exact path={routes.HOME} component={HomeApp} />
         <Route path={routes.BOOK} component={BookApp} />
@@ -48,7 +46,9 @@ return (
         <Route exact path={routes.NOTE} component={NoteApp} />
         <Route exact path={routes.SIGN_IN} component={LoginApp} />
         <Route exact path={routes.SIGN_UP} component={SignUpApp} /> */}
+        <Footer/>
       </div>
+      
     </div>
   </BrowserRouter>
 )}
