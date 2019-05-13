@@ -47,4 +47,7 @@
 .book .content .rightContainer{
   flex: 3;
 }
+.book .content .rightContainer .bookCover{
+  
+}
 

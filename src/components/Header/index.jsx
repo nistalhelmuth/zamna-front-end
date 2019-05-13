@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Color from '../../common/color.js';
 import Subtitle from '../Text/Subtitle';
 import Button from '../Button';
@@ -12,10 +14,12 @@ const Header = ({
   }) => (
     <div className={"Container"}>
       <div className={"Logo"}> 
-        <img 
-            className={'LogoImg'}
-            src={zamnaName}
-        />
+        <Link to={`/home`} style={{textDecoration: 'none', margin: 0}}>
+          <img 
+              className={'LogoImg'}
+              src={zamnaName}
+          />
+        </Link>
       </div>
       <div className={'Input'}> 
         <p className={'Text'}>Buscar:</p>
@@ -31,4 +35,7 @@ const Header = ({
     </div>
   );
 
-  export default Header;
+export default withRouter(connect(
+  undefined,
+  undefined
+)(Header));

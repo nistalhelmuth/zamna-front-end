@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FaBeer } from 'react-icons/fa';
-
 import * as actions from '../../actions/book'
 
 import BookList from '../BooksList';
+import styles from './home.module.css';
 
 class HomeApp extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class HomeApp extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.home}>
         <BookList />   
       </div>
     );
