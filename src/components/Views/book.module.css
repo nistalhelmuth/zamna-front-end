@@ -1,4 +1,6 @@
 .book {
+  display: flex;
+  justify-content: center;
 }
 
 .book .content{

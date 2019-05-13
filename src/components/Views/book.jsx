@@ -30,7 +30,6 @@ class BookApp extends Component {
     console.log(book.platlists)
     return(
       <div className={styles.book}>
-        {/*this.props.location.pathname*/}
         <div className={styles.content}>
           <div className={styles.leftContainer}>
             <div className={styles.top}>
