@@ -15,7 +15,8 @@ const Button = ({
   iconTop=false,
   iconBottom=false,
   onClick,
-  style
+  style,
+  ...props,
 }) => (
   <button className={`
     ${styles.button}
@@ -33,7 +34,8 @@ const Button = ({
     "background-image": color && secundaryColor ? `linear-gradient(to bottom right, ${secundaryColor}, ${color})` : "none",
     ...style,
   }}
-  onClick={()=> console.log(styles)} >
+  onClick={()=> console.log(styles)}
+  {...props} >
     { Icon && <Icon className="icon" /> }
     {children}
   </button>

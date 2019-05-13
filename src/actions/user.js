@@ -1,14 +1,12 @@
 import * as types from '../types/user';
 
 export const registerUser = (
-  id,
   username,
   email,
   password,
 ) => ({
   type: types.USER_REGISTERED,
   payload: {
-    id,
     username,
     email,
     password,
@@ -32,24 +30,22 @@ export const registerUserFail = () => ({
 });
 
 export const logUser = (
-  email,
+  username,
   password,
 ) => ({
   type: types.USER_LOGGED,
   payload: {
-    email,
+    username,
     password,
   }
 });
 
 export const logUserSuccess = (
-  id,
-  username,
+  jwt
 ) => ({
   type: types.USER_LOGGED_SUCCEEDED,
   payload: {
-    id,
-    username,
+    jwt
   }
 });
 

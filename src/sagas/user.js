@@ -34,19 +34,19 @@ function* userCreator(action) {
 function* userLogger(action){
   const {
     payload: {
-        email,
+        username,
         password,
     }
   } = action;
   try {
     const response = yield call(
         logUser,
-        email,
+        username,
         password,
     );
-    yield put(actions.registerUserSuccess(response.user));
+    yield put(actions.logUserSuccess(response.user));
   } catch(e) {
-    console.log('Saga user logger failed');
+    alert('Usuario o contraseña incorrectas');
   }
 }
 

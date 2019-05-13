@@ -85,3 +85,10 @@ input {
     color: #FBFBFF;
 }
 
+.InputLogged {
+    width: -webkit-fill-available;
+}
+
+.InputTextLogged {
+    width: 40rem;
+}

@@ -5,19 +5,18 @@ export const postUser = (
   email,
   password,
 ) => new Promise((resolve, reject) => {
-  fetch('http://127.0.0.1:8000/api/v1/users/', {
+  fetch('http://127.0.0.1:8000/api/v1/users', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      id,
       username,
-      email,
       password,
     }),
   }).then((resultado) => {
+    console.log(resultado);
     if (resultado.ok) {
       resolve(resultado.json());
     } else {
@@ -33,7 +32,7 @@ export const logUser = (
   username, 
   password,
 ) => new Promise((resolve, reject) => {
-  fetch('http://127.0.0.1:8000/api/v1/loginUser/', {//revisar las direcciones
+  fetch('http://127.0.0.1:8000/api-token-auth/', {//revisar las direcciones
     method: 'POST',
     headers: {
       Accept: 'application/json',
