@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { FaBeer } from 'react-icons/fa';
 import Bookcover from '../Bookcover';
@@ -12,6 +12,7 @@ import PlaylistCard from '../PlaylistCard';
 import * as actions from '../../actions/book';
 import * as selectors from '../../reducers';
 import styles from './book.module.css';
+import Button from '../Button';
 
 class BookApp extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class BookApp extends Component {
     console.log(book.platlists)
     return(
       <div className={styles.book}>
-        {/*this.props.location.pathname*/}
+
         <div className={styles.content}>
           <div className={styles.leftContainer}>
             <div className={styles.top}>
@@ -53,7 +54,12 @@ class BookApp extends Component {
           </div>
           <div className={styles.rightContainer}>
             <h3>Similar books:</h3>
-            {book.id && book.similar_books.map(book => <Bookcover imageUrl={book.img} />)}
+            {book.id && book.similar_books.map(book => (
+                <Link to={`/book/${book.id}`} style={{textDecoration: 'none', margin: 0}}>
+                    <Bookcover imageUrl={book.img} />
+                </Link>
+              ))
+            }
           </div>
         </div> 
       </div>);

@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
 import * as actions from '../../actions/user';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Color from '../../common/color.js';
 import Subtitle from '../Text/Subtitle';
 import Button from '../Button';
@@ -21,10 +21,12 @@ const Header = ({
 }) => (
     <div className={styles.Container}>
       <div className={styles.Logo}>
-        <img
-          className={styles.LogoImg}
-          src={zamnaName}
-        />
+      <Link to={`/home`} style={{textDecoration: 'none', margin: 0}}>
+          <img 
+              className={styles.LogoImg}
+              src={zamnaName}
+          />
+        </Link>
       </div>
       <div className={`
         ${styles.Input}

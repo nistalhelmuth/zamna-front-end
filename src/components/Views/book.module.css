@@ -1,4 +1,6 @@
 .book {
+  display: flex;
+  justify-content: center;
 }
 
 .book .content{
@@ -44,5 +46,8 @@
 
 .book .content .rightContainer{
   flex: 3;
+}
+.book .content .rightContainer .bookCover{
+  
 }
 
