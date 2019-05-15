@@ -5,11 +5,10 @@ import { FaBeer } from 'react-icons/fa';
 import Bookcover from '../Bookcover';
 import Rating from '../Rating';
 import renderHTML from 'react-render-html';
-import SpotifyPlayer from 'react-spotify-player';
-import { dispatch } from 'rxjs/internal/observable/range';
 import PlaylistCard from '../PlaylistCard';
 
 import * as actions from '../../actions/book';
+import * as playlistActions from '../../actions/playlist';
 import * as selectors from '../../reducers';
 import styles from './book.module.css';
 import Button from '../Button';
@@ -26,9 +25,7 @@ class BookApp extends Component {
   }
 
   render() {
-    const { book } = this.props;
-    console.log(book)
-    console.log(book.platlists)
+    const { book,playlists, postPlaylist } = this.props;
     return(
       <div className={styles.book}>
 
@@ -50,7 +47,16 @@ class BookApp extends Component {
               </div>
             </div>
             <hr/>
-            {book.playlists && book.playlists.map((playlist, i) => <PlaylistCard playlist={playlist} playlistIndex={i}/>)}
+            {playlists && playlists.map(playlist => <PlaylistCard votes={playlist.votes} uri={playlist.uri} id={playlist.id}/>)}
+            <hr/>
+            <div className={styles.postPlaylist}>
+              <label>Ingresa el URI de spotify: </label>
+              <input placeholder="Uri..."/>
+              <Button 
+                onClick={() => {postPlaylist('spotify:album:2FKht5Fz3aEk6t9ZEFk5lp')}}>
+                Crear PLaylist
+              </Button>
+            </div>
           </div>
           <div className={styles.rightContainer}>
             <h3>Similar books:</h3>
@@ -71,10 +77,14 @@ class BookApp extends Component {
 export default withRouter(connect(
   state => ({
     book: selectors.getBook(state),
+    playlists: selectors.getPlaylists(state),
   }),
   dispatch => ({
     getBook(id) {
-      dispatch(actions.fetchBook(id))
+      dispatch(actions.fetchBook(id));
     },
+    postPlaylist(uri) {
+      dispatch(playlistActions.createPlaylist(uri));
+    }
   }),
 )(BookApp));

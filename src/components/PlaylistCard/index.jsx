@@ -12,17 +12,17 @@ class PlaylistCard extends Component {
   }
 
   render () {
-    const {playlist, voteAction} = this.props
+    const {votes,uri, voteAction} = this.props
     return(
       <div className={styles.playlistCard}>
         <SpotifyPlayer
-          uri={playlist.uri}
+          uri={uri}
           size={'compact'}
         />
         <div className={styles.votesContainer}>
-          <button onClick={voteAction(1)}/>
-          <h3>{playlist.votes}</h3>
-          <button onClick={voteAction(-1)}/>
+          <button onClick={() => {voteAction(votes+1)}}/>
+          <h3>{votes}</h3>
+          <button onClick={() => {voteAction(votes-1)}}/>
         </div>
       </div>
     )
@@ -31,9 +31,9 @@ class PlaylistCard extends Component {
 
 export default connect(
   undefined,
-  (dispatch, playlist, playlistIndex) => ({
-    voteAction(vote) {
-      //dispatch(actions.ratePlaylist(playlistIndex,playlist.id,0,vote))
+  (dispatch, { id }) => ({
+    voteAction(value) {
+      dispatch(actions.ratePlaylist(id,0,value))
     }
   })
 )(PlaylistCard);

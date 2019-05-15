@@ -62,26 +62,26 @@ export const fetchPlaylistsFail = (
 
 // rate playlist
 export const ratePlaylist = (
-  playlist,
+  playlist_id,
   user_id,
-  vote,
+  votes,
 ) => ({
   type: types.PLAYLIST_RATED,
   payload: {
-    playlist,
+    playlist_id,
     user_id,
-    vote,
+    votes,
   }
 });
 
 export const ratePlaylistSuccess = (
-  playlist_index,
-  all_votes,
+  playlist_id,
+  new_votes,
 ) => ({
   type: types.PLAYLIST_RATED_SUCCEEDED,
   payload: {
-    playlist_index,
-    all_votes,
+    playlist_id,
+    new_votes,
   }
 });
 

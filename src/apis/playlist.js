@@ -39,18 +39,17 @@ export const getAllPlaylists = (
   .catch(error => console.log(error));
 
 export const postRateInPlaylist = (
-  rating,
-  playlist,
+  playlist_id,
+  votes,
 ) => new Promise((resolve, reject) => {
-  fetch('http://127.0.0.1:8000/api/v1/rate_per_playlist/', {
-    method: 'POST',
+  fetch(`http://127.0.0.1:8000/api/v1/playlist/${playlist_id}/`, {
+    method: 'PATCH',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      rating,
-      playlist,
+      votes,
     }),
   }).then((resultado) => {
     if (resultado.ok) {

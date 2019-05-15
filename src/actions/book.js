@@ -18,7 +18,7 @@ export const fetchBookSuccess = ({
   publisher,
   publication_year,
   similar_books,
-  playlists,
+  playlists_order,
 }) => ({
   type: types.BOOK_FETCHED_SUCCEEDED,
   payload: {
@@ -32,7 +32,7 @@ export const fetchBookSuccess = ({
     publisher,
     publication_year,
     similar_books,
-    playlists,
+    playlists_order,
   }
 });
 

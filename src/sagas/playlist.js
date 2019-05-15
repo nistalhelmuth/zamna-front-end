@@ -54,22 +54,20 @@ function* playlistFetcher(action) {
 function* playlistRater(action) {
   const {
     payload: {
-      playlist_index,
-      playlist,
+      playlist_id,
       user_id,
-      vote,
+      votes,
     }
   } = action;
   try {
-    /*
     const response = yield call(
       postRateInPlaylist,
-       playlist,
-      user_id,
-      vote,
-    );*/
-    yield put(actions.ratePlaylistSuccess(playlist_index,999));
+      playlist_id,
+      votes,
+    );
+    yield put(actions.ratePlaylistSuccess(response.id,response.votes));
   } catch(e) {
+    console.log(e);
     console.log('Saga playlist rater failed');
   }
 }
