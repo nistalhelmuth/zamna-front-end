@@ -44,16 +44,6 @@
   margin-top: 0;
 }
 
-.book .content .leftContainer .postPlaylist{
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.book .content .leftContainer .postPlaylist *{
-  flex: 1;
-}
-
 .book .content .rightContainer{
   flex: 3;
 }

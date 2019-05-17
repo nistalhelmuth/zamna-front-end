@@ -16,6 +16,17 @@ const currentBook = (state = {}, action) => {
       }
       return new_state;
     } 
+    case playlistTypes.PLAYLIST_CREATED_SUCCEEDED: {
+      const { id } = action.payload;
+      const playlist = state.playlists_order; 
+      playlist.push(id)
+      const new_state = {
+        ...state,
+        playlists_order: playlist,
+      }
+      
+      return new_state;
+    }
     default: {
       return state;
     }

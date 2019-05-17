@@ -6,12 +6,16 @@ import Bookcover from '../Bookcover';
 import Rating from '../Rating';
 import renderHTML from 'react-render-html';
 import PlaylistCard from '../PlaylistCard';
+import { reset } from 'redux-form';
 
 import * as actions from '../../actions/book';
 import * as playlistActions from '../../actions/playlist';
 import * as selectors from '../../reducers';
 import styles from './book.module.css';
 import Button from '../Button';
+import { select } from '@redux-saga/core/effects';
+import PlaylistForm from '../PlaylistForm';
+import { BOOK_FETCHED } from '../../types/book';
 
 class BookApp extends Component {
   constructor(props) {
@@ -28,7 +32,6 @@ class BookApp extends Component {
     const { book,playlists, postPlaylist } = this.props;
     return(
       <div className={styles.book}>
-
         <div className={styles.content}>
           <div className={styles.leftContainer}>
             <div className={styles.top}>
@@ -47,16 +50,12 @@ class BookApp extends Component {
               </div>
             </div>
             <hr/>
-            {playlists && playlists.map(playlist => <PlaylistCard votes={playlist.votes} uri={playlist.uri} id={playlist.id}/>)}
+            {playlists[0] ? 
+              (playlists.map(playlist => <PlaylistCard votes={playlist.votes} uri={playlist.uri} id={playlist.id}/>)):
+              (<h3>No hay playlists</h3>)
+            }
             <hr/>
-            <div className={styles.postPlaylist}>
-              <label>Ingresa el URI de spotify: </label>
-              <input placeholder="Uri..."/>
-              <Button 
-                onClick={() => {postPlaylist('spotify:album:2FKht5Fz3aEk6t9ZEFk5lp')}}>
-                Crear PLaylist
-              </Button>
-            </div>
+              <PlaylistForm postPlaylist={postPlaylist} book_id={book.id}/>
           </div>
           <div className={styles.rightContainer}>
             <h3>Similar books:</h3>
@@ -83,8 +82,9 @@ export default withRouter(connect(
     getBook(id) {
       dispatch(actions.fetchBook(id));
     },
-    postPlaylist(uri) {
-      dispatch(playlistActions.createPlaylist(uri));
+    postPlaylist(uri,book_id,user=1) {/*user id*/
+      dispatch(playlistActions.createPlaylist(uri,book_id, user));
+      dispatch(reset('NewPlaylist'));
     }
   }),
 )(BookApp));

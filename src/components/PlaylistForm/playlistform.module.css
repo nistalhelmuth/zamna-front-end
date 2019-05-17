@@ -1,0 +1,10 @@
+.playlistForm {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playlistForm *{
+  flex: 1;
+}

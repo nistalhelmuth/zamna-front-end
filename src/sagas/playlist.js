@@ -11,24 +11,21 @@ import { postPlaylist, getAllPlaylists, postRateInPlaylist, postCommentInPlaylis
 function* playlistCreator(action) {
     const {
       payload: {
-        name,
-        link,
-        user,
-        description,
-        book,
+        uri,
+        book_id,
+        user_id,
       }
     } = action;
     try {
       const response = yield call(
           postPlaylist,
-          name,
-          link,
-          user,
-          description,
-          book,
+          uri,
+          book_id,
+          user_id,
       );
-      yield put(actions.createPlaylistsSuccess(response.playlist));
+      yield put(actions.createPlaylistsSuccess(response));
     } catch(e) {
+      console.log(e);
       console.log('Saga playlist creator failed');
     }
 }

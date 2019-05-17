@@ -1,10 +1,8 @@
 
 export const postPlaylist = (
-  name,
-  link,
-  user,
-  description,
-  book,
+  uri,
+  book_id,
+  user_id,
 ) => new Promise((resolve, reject) => {
   fetch('http://127.0.0.1:8000/api/v1/playlist/', {
     method: 'POST',
@@ -13,11 +11,9 @@ export const postPlaylist = (
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      name,
-      link,
-      user,
-      description,
-      book,
+      uri,
+      book_id,
+      user_id,
     }),
   }).then((resultado) => {
     if (resultado.ok) {

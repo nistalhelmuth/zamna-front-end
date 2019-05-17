@@ -2,28 +2,24 @@ import * as types from '../types/playlist';
 
 // create playlist
 export const createPlaylist = (
-  id,
-  name,
-  link,
-  user,
-  description,
+  uri,
+  book_id,
+  user_id,
 ) => ({
   type: types.PLAYLIST_CREATED,
   payload: {
-    id,
-    name,
-    link,
-    user,
-    description,
+    uri,
+    book_id,
+    user_id,
   }
 });
 
 export const createPlaylistsSuccess = (
-  id,
+  playlist,
 ) => ({
   type: types.PLAYLIST_CREATED_SUCCEEDED,
   payload: {
-    id,
+    ...playlist
   }
 });
 

@@ -20,6 +20,13 @@ export const playlistsById = (state = false, action) => {
       }
       return new_state;
     }
+    case types.PLAYLIST_CREATED_SUCCEEDED: {
+      const new_state = {
+        ...state,
+        [ action.payload.id ]: action.payload,
+      }
+      return new_state;
+    }
     default: {
       return state;
     }
