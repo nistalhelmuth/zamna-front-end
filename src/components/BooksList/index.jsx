@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import * as selectors from '../../reducers';
+import * as actions from '../../actions/book';
 
 import Color from '../../common/color.js';
 import Title from '../Text/Title';
@@ -11,7 +12,6 @@ import Rating from '../Rating';
 import BookCard from '../BookCard';
 
 import styles from './bookList.module.css';
-import { select } from 'redux-saga/effects';
 
 const BookList = ({
   books=[]
@@ -29,6 +29,7 @@ const BookList = ({
                  />
       )
     : null}
+
   </div>
 );
 
@@ -37,4 +38,7 @@ export default connect(
   state => ({
     books: selectors.getAllBooks(state),
   }),
+  dispatch => ({
+
+  })
 )(BookList);

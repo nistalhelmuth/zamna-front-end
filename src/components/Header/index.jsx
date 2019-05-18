@@ -11,7 +11,8 @@ import * as selectors from '../../reducers';
 
 import styles from './header.module.css';
 import { selector } from 'postcss-selector-parser';
-import LogInForm from '../LogInForm/index.jsx';
+import SearchForm from '../SearchForm'
+import LogInForm from '../LogInForm';
 
 const Header = ({
   userId,
@@ -32,11 +33,7 @@ const Header = ({
         ${styles.Input}
         ${isLogged ? styles.InputLogged : null}
       `} >
-        <p className={styles.Text}>Buscar:</p>
-        <input className={`
-          ${styles.bookInput}
-          ${isLogged ? styles.InputTextLogged : null}
-        `} placeholder={'Nombre del libro'} />
+        <SearchForm />
       </div>
       {!isLogged ?
         <LogInForm login={login} /> : null

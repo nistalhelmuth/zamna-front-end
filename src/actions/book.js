@@ -44,7 +44,7 @@ export const fetchBookFail = (id) => ({
 });
 
 export const fetchAllBooks = (
-  title='he'
+  title='he',
 ) => ({
   type: types.ALL_BOOKS_FETCHED,
   payload: {

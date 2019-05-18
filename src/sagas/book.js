@@ -17,6 +17,8 @@ function* allBooksFetcher(action) {
     },
   } = action;
 
+  console.log(title)
+
   try {
     const raw_books = yield call(
       getAllBooks,
