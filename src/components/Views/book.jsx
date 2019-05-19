@@ -60,7 +60,7 @@ class BookApp extends Component {
           <div className={styles.rightContainer}>
             <h3>Similar books:</h3>
             {book.id && book.similar_books.map(book => (
-                <Link to={`/book/${book.id}`} style={{textDecoration: 'none', margin: 0}}>
+                <Link onClick={()=> this.setState({a: true})} to={`/book/${book.id}`} style={{textDecoration: 'none', margin: 0}}>
                     <Bookcover imageUrl={book.img} />
                 </Link>
               ))

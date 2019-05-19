@@ -100,3 +100,7 @@ input {
     justify-content: end;
 }
 
+.button {
+    padding: 0 2rem;
+}
+

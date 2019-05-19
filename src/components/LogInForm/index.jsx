@@ -23,21 +23,27 @@ class LogInForm extends Component {
         spellCheck="off"
         className={styles.User}>
         <Field 
-          className={styles.UserInput}
+          className={`
+            ${styles.UserInput}
+            ${styles.text_input}
+          `}
           name="username"
           component="input"
           type="text"
           placeholder="Usuario"
         />
         <Field 
-          className={styles.PassInput}
+          className={`
+            ${styles.PassInput}
+            ${styles.text_input}
+          `}
           name="password"
           component="input"
           type="password"
           placeholder="Contraseña"
         />
-        <Button type="submit" style={{ height: '50%', width: '7rem' }}>
-          <p className={styles.Text}> Ingresar </p>
+        <Button style={{marginTop: '1.5rem'}} type="submit" style={{ height: '50%', width: '7rem' }}>
+          Ingresar
         </Button>
       </form>
     )

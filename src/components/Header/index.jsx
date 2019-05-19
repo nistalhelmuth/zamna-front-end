@@ -40,16 +40,24 @@ const Header = ({
       {!isLogged ? 
         <div className={styles.Buttons}>
           <Popup
-            trigger={<Button>Ingresar</Button>}
+            trigger={<Button style={{padding: '0 2rem'}} >Ingresar</Button>}
             position="bottom center"
             closeOnDocumentClick
+            contentStyle={{
+              borderRadius: '0.5rem',
+              width: '18rem',
+            }}
           >
             <LogInForm login={login} /> 
           </Popup> 
           <Popup
-            trigger={<Button>Registrar</Button>}
+            trigger={<Button style={{padding: '0 2rem'}} >Registrar</Button>}
             position="bottom center"
             closeOnDocumentClick
+            contentStyle={{
+              borderRadius: '0.5rem',
+              width: '18rem',
+            }}
           >
             <RegisterForm login={login} /> {/*CAMBIAR CON REGISTER*/}
           </Popup>

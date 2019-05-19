@@ -23,28 +23,28 @@ class RegisterForm extends Component {
         spellCheck="off"
         className={styles.User}>
         <Field 
-          className={styles.UserInput}
+          className={styles.text_input}
           name="username"
           component="input"
           type="text"
           placeholder="Usuario"
         />
         <Field 
-          className={styles.PassInput}
+          className={styles.text_input}
           name="password"
           component="input"
           type="password"
           placeholder="Contraseña"
         />
         <Field 
-          className={styles.UserInput}
+          className={styles.text_input}
           name="username"
           component="input"
           type="text"
           placeholder="Usuario"
         />
         <Field 
-          className={styles.PassInput}
+          className={styles.text_input}
           name="password"
           component="input"
           type="password"
