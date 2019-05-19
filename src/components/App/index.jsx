@@ -38,7 +38,7 @@ return (
       <Header/>
       {/* <SignUp/> */}
       <div className={styles.content}>
-        <Route path={'/'} component={StartApp} />
+        <Route exact path={'/'} component={StartApp} />
         <Route exact path={routes.HOME} component={HomeApp} />
         <Route path={routes.BOOK} component={BookApp} />
         {/*<Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
@@ -50,6 +50,7 @@ return (
         <Route exact path={routes.SIGN_UP} component={SignUpApp} /> */}
         <Footer/>
       </div>
+      
       
     </div>
   </BrowserRouter>

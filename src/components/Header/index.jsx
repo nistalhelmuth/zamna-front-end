@@ -13,6 +13,8 @@ import styles from './header.module.css';
 import { selector } from 'postcss-selector-parser';
 import SearchForm from '../SearchForm'
 import LogInForm from '../LogInForm';
+import RegisterForm from '../RegisterForm';
+import Popup from "reactjs-popup";
 
 const Header = ({
   userId,
@@ -35,8 +37,23 @@ const Header = ({
       `} >
         <SearchForm />
       </div>
-      {!isLogged ?
-        <LogInForm login={login} /> : null
+      {!isLogged ? 
+        <div className={styles.Buttons}>
+          <Popup
+            trigger={<Button>Ingresar</Button>}
+            position="bottom center"
+            closeOnDocumentClick
+          >
+            <LogInForm login={login} /> 
+          </Popup> 
+          <Popup
+            trigger={<Button>Registrar</Button>}
+            position="bottom center"
+            closeOnDocumentClick
+          >
+            <RegisterForm login={login} /> {/*CAMBIAR CON REGISTER*/}
+          </Popup>
+        </div> : null
       }
     </div>
   );
