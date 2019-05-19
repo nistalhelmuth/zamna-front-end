@@ -19,9 +19,12 @@ class Rating extends React.Component {
   }
 
   render() {
-    const { stars, maxStars = 5, book } = this.props;
+    const { stars, maxStars = 5, book, className } = this.props;
     return (
-      <div className={styles.ratingContainer}>
+      <div className={`
+        ${styles.ratingContainer}
+        ${className}
+      `}>
         <StarRatingComponent
           className={styles.rating}
           name={`rate-${book}`}

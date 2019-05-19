@@ -26,9 +26,11 @@ const BookCard = ({
       <Bookcover imageUrl={imageUrl} />
     </div>
     <div className={styles.RightContainer}>
-      <Title> {title} </Title>
-      <Subtitle> {author} </Subtitle>
-      <Rating stars={rating} />
+      <div>
+        <Title> {title} </Title>
+        <Subtitle> {author} </Subtitle>
+        <Rating className={styles.rating} stars={rating} />
+      </div>
       <Link to={`/book/${id}`} style={{textDecoration: 'none', margin: 0}}>
         <Button Icon={FaSpotify} iconLeft style={{margin: 0, width: '100%'}}>
           <p className={styles.text}> Playlists </p>

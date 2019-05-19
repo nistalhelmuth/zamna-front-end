@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import * as selectors from '../../reducers';
@@ -12,6 +12,7 @@ import Rating from '../Rating';
 import BookCard from '../BookCard';
 
 import styles from './bookList.module.css';
+import { red } from 'ansi-colors';
 
 const BookList = ({
   books=[]
@@ -19,14 +20,16 @@ const BookList = ({
   <div className={styles.Container}>
     { books.length > 0 ? 
       books.map(
-        book => <BookCard 
-                  key={book.id}
-                  id={book.id}
-                  title={book.title}
-                  author={book.author}
-                  imageUrl={book.img}
-                  rating={book.average_rating}
-                 />
+        book => <Fragment>
+          <BookCard 
+            key={book.id}
+            id={book.id}
+            title={book.title}
+            author={book.author}
+            imageUrl={book.img}
+            rating={book.average_rating}
+            />
+        </Fragment>
       )
     : null}
 

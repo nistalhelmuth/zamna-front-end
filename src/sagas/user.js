@@ -44,7 +44,8 @@ function* userLogger(action){
         username,
         password,
     );
-    yield put(actions.logUserSuccess(response.user));
+    const val = yield put(actions.logUserSuccess(response.user));
+    console.log(response)
   } catch(e) {
     alert('Usuario o contraseña incorrectas');
   }

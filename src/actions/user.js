@@ -41,11 +41,15 @@ export const logUser = (
 });
 
 export const logUserSuccess = (
-  jwt
+  id,
+  username,
+  jwt,
 ) => ({
   type: types.USER_LOGGED_SUCCEEDED,
   payload: {
-    jwt
+    id,
+    username,
+    jwt,
   }
 });
 
