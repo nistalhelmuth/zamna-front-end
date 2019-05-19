@@ -3,3 +3,44 @@
   justify-content: center;
   margin-top: 1rem;
 }
+
+.start {
+  
+}
+
+.startFirst {
+  background-color:#2A2644;
+  padding: 0 10rem;
+  display: flex;
+  flex-direction: row;
+  padding: 10rem 12rem;
+  align-items: center;
+}
+
+.startFirstLeft {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.startFirstRight {
+  margin-left:10rem; 
+  display: flex;
+}
+
+.startCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+}
+
+.startSecond {
+  color: #232323;
+  background-color: #e7ecf4;
+  padding: 10rem 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

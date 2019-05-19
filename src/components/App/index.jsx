@@ -8,6 +8,7 @@ import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
 
 import HomeApp from '../Views/home';
 import BookApp from '../Views/book';
+import StartApp from '../Views/start';
 import Header from '../Header/index.jsx';
 import Footer from '../Footer/index.jsx';
 import SignUp from '../SignUp/index.jsx';
@@ -37,6 +38,7 @@ return (
       <Header/>
       {/* <SignUp/> */}
       <div className={styles.content}>
+        <Route path={'/'} component={StartApp} />
         <Route exact path={routes.HOME} component={HomeApp} />
         <Route path={routes.BOOK} component={BookApp} />
         {/*<Route exact path={routes.LANDING} component={userIsAuthenticated(HomeApp)} />
