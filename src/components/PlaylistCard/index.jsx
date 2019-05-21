@@ -5,6 +5,7 @@ import SpotifyPlayer from 'react-spotify-player';
 
 import * as actions from '../../actions/playlist';
 import styles from './playlistcard.module.css';
+import { IoMdArrowRoundUp, IoMdArrowRoundDown } from "react-icons/io";
 
 class PlaylistCard extends Component {
   constructor(props) {
@@ -20,9 +21,15 @@ class PlaylistCard extends Component {
           size={'compact'}
         />
         <div className={styles.votesContainer}>
-          <button onClick={() => {voteAction(votes+1)}}/>
+          <IoMdArrowRoundUp 
+            className={styles.upDownButton} 
+            onClick={() => {voteAction(votes+1)}}
+          />
           <h3>{votes}</h3>
-          <button onClick={() => {voteAction(votes-1)}}/>
+          <IoMdArrowRoundDown 
+            className={styles.upDownButton} 
+            onClick={() => {voteAction(votes-1)}}
+          />
         </div>
       </div>
     )
