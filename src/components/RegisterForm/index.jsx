@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
 
 import Button from '../Button';
+import * as actions from '../../actions/user';
 
 import styles from './register.module.css';
+
+export const passwordsMustMatch = (value, allValues) => 
+  value !== allValues.password ? 
+    alert('Passwords do not match') :
+     undefined
 
 class RegisterForm extends Component {
 
   onSubmit(values) {
-    console.log(values);
-    this.props.login(values);
+    if (values.password === values.passwordConfirmation) {
+      const { email, username, password } = values;
+      this.props.register(email, username, password);
+    } else {
+      alert('Error en los registros.');
+      this.props.clear();
+    }
   }
 
   render() {
@@ -21,7 +32,15 @@ class RegisterForm extends Component {
         autoComplete="off"
         autoCorrect="off"
         spellCheck="off"
-        className={styles.User}>
+        className={styles.User}
+      >
+        <Field 
+          className={styles.text_input}
+          name="email"
+          component="input"
+          type="text"
+          placeholder="Correo"
+        />
         <Field 
           className={styles.text_input}
           name="username"
@@ -38,14 +57,7 @@ class RegisterForm extends Component {
         />
         <Field 
           className={styles.text_input}
-          name="username"
-          component="input"
-          type="text"
-          placeholder="Usuario"
-        />
-        <Field 
-          className={styles.text_input}
-          name="password"
+          name="passwordConfirmation"
           component="input"
           type="password"
           placeholder="Contraseña"
@@ -58,4 +70,14 @@ class RegisterForm extends Component {
   }
 }
 
-export default reduxForm({ form: 'Register' })(RegisterForm);
+export default connect(
+  undefined,
+  dispatch => ({
+    register: (email, username, password) => {
+      dispatch(actions.registerUser(username, email, password));
+    },
+    clear: () => {
+      dispatch(reset('Register'));
+    }
+  })
+)(reduxForm({ form: 'Register' })(RegisterForm));

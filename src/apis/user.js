@@ -1,17 +1,16 @@
 
 export const postUser = (
-  id,
   username,
   email,
   password,
 ) => new Promise((resolve, reject) => {
-  fetch('http://127.0.0.1:8000/api/v1/users', {
+  fetch('http://127.0.0.1:8000/api/v1/user/', {
     method: 'POST',
-    headers: {
-      Accept: 'application/json',
+    headers: new Headers({
       'Content-Type': 'application/json',
-    },
+    }),
     body: JSON.stringify({
+      email,
       username,
       password,
     }),
