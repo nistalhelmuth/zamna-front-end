@@ -6,7 +6,7 @@ import {
 
 import * as types from '../types/user'
 import * as actions from '../actions/user'
-import { postUser, logUser, getAllUsers, getUser } from '../apis/user';
+import { postUser, logUser, getAllUsers, getUser } from '../AWSapis/user';//'../apis/user';
 
 function* userCreator(action) {
     const {

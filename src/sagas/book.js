@@ -7,7 +7,7 @@ import {
 import * as types from '../types/book';
 import * as actions from '../actions/book';
 import * as playlistActions from '../actions/playlist';
-import { getAllBooks, getBook } from '../apis/book';
+import { getAllBooks, getBook } from '../AWSapis/book';//'../apis/book';
 
 
 function* allBooksFetcher(action) {

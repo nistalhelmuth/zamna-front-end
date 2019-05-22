@@ -6,7 +6,7 @@ import {
 
 import * as types from '../types/playlist'
 import * as actions from '../actions/playlist'
-import { postPlaylist, getAllPlaylists, postRateInPlaylist, postCommentInPlaylist } from '../apis/playlist';
+import { postPlaylist, getAllPlaylists, postRateInPlaylist, postCommentInPlaylist } from '../AWSapis/playlist';//'../apis/playlist';
 
 function* playlistCreator(action) {
     const {
